@@ -9,7 +9,9 @@ mongoose.connect('mongodb+srv://admin:1234@coindb.cwrdg.mongodb.net/mongo-test?r
   useNewUrlParser: true
 });
 
-app.listen(4000, () => { console.log('Server is running...') });
+const PORT = process.env.PORT || 4000
+
+app.listen(PORT, () => { console.log('Server is running...') });
 
 app.get("/", (req, res) => {
   res.status(200).send("หน้าแรกของ api express");
