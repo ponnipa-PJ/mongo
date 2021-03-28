@@ -31,9 +31,11 @@ router.get("/user/:_id", (req, res) => {
 // POST (create new data)
 router.post("/user", (req, res) => {
   console.log(req.body);
+  res.setHeader("Content-Type: application/json; charset=UTF-8");
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8100');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader("Access-Control-Max-Age: 3600");
+  res.setHeader("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
   res.setHeader('Access-Control-Allow-Credentials', true);
   var obj = new User(req.body);
   obj.save((err, data) => {
