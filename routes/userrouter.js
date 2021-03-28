@@ -18,6 +18,10 @@ router.get("/user", (req, res) => {
 
 // GET 1
 router.get("/user/:_id", (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
   User.findById(req.params._id).exec((err, data) => {
     if (err) return res.status(400).send(err);
     res.status(200).send(data);
