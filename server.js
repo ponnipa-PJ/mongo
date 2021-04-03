@@ -9,7 +9,7 @@ mongoose.connect('mongodb+srv://admin:<password>@databasename.cwrdg.mongodb.net/
   useNewUrlParser: true
 });
 
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => { console.log('Server is running...') });
 
