@@ -5,7 +5,7 @@ const foodRouter = require('./routes/userrouter');
 const app = express();
 app.use(express.json()); // Make sure it comes back as json
 
-mongoose.connect('mongodb+srv://admin:1234@coindb.cwrdg.mongodb.net/mongo-test?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://admin:<password>@databasename.cwrdg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
   useNewUrlParser: true
 });
 
@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 app.use(foodRouter);
 
 const cors = require('cors');
-app.use(cors({origin: 'http://localhost:8100/*'}));
+app.use(cors({origin: '*'}));
 
 app.use((req, res, next) => {
   var err = new Error("ไม่พบ path ที่คุณต้องการ");
