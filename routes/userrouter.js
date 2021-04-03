@@ -32,7 +32,7 @@ router.get("/user/:_id", (req, res) => {
 router.post("/user", (req, res) => {
   console.log(req.body);
   res.setHeader("Content-Type: application/json; charset=UTF-8");
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8100');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
   res.setHeader("Access-Control-Max-Age: 3600");
   res.setHeader("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
@@ -46,7 +46,7 @@ router.post("/user", (req, res) => {
 
 // PUT (update current data)
 router.put("/user/:_id", (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8100');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -58,7 +58,7 @@ router.put("/user/:_id", (req, res) => {
 
 // DELETE (delete 1 data)
 router.delete("/user/:_id", (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8100');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type,X-Session-Id');
   res.setHeader('Access-Control-Allow-Credentials', true);
